@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,17 @@ Route::prefix('client')->group(function(){
     // Client Price Information
     Route::get('/priceInformation',[CustomerController::class,'priceInformation']);
     Route::get('/viewPriceInformation',[CustomerController::class,'viewPriceInformation']);
+
+    Route::prefix('payment')->group(function()
+    {
+        // client payment list
+        /*
+            write route here
+        */
+
+        // client payment details
+        Route::get('/details',[PaymentController::class,'details']);
+
+    });
+
 });
